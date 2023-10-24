@@ -3,8 +3,9 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))  # This adds the parent directory to sys.path
 
-from app import app  # Now, you should be able to import app
+
 import pytest
+from app import app  # Now, you should be able to import app
 from flask import Flask
 
 # ...rest of your test code
