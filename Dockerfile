@@ -9,6 +9,10 @@ COPY . /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install Flask
+# Install testing dependencies
+RUN pip install pytest
+# Add other dependencies if needed
+
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
