@@ -17,7 +17,7 @@ jobs:
       run: docker build -t cicd-flask-app .  
 
     - name: Test
-      run: docker run cicd-flask-app pytest  
+      run: docker run cicd-flask-app pytest .Tests  # Specify the directory with your tests
 
   deploy:
     needs: build
@@ -29,6 +29,6 @@ jobs:
 
     - name: Deploy to server
       run: |
-        docker stop cicd-flask-app-container || true  # Replace "your-container-name" with "cicd-flask-app-container"
-        docker rm cicd-flask-app-container || true  # Replace "your-container-name" with "cicd-flask-app-container"
-        docker run -d -p 80:80 --name cicd-flask-app-container cicd-flask-app  # Replace "your-docker-image-name" with "cicd-flask-app"
+        docker stop cicd-flask-app-container || true
+        docker rm cicd-flask-app-container || true
+        docker run -d -p 80:80 --name cicd-flask-app-container cicd-flask-app
