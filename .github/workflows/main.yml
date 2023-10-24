@@ -17,7 +17,7 @@ jobs:
       run: docker build -t cicd-flask-app .  
 
     - name: Test
-      run: docker run cicd-flask-app pytest .Tests  # Specify the directory with your tests
+      run: docker run cicd-flask-app pytest .Tests
 
   deploy:
     needs: build
@@ -26,6 +26,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
     - name: Deploy to server
       run: |
