@@ -34,5 +34,5 @@ jobs:
       run: |
         docker stop cicd-flask-app-container || true
         docker rm cicd-flask-app-container || true 
-        docker run -d -p 80:80 --name cicd-flask-app-container malateshgp/my-flask-app:latest
+        docker run -d -p 80:80 --name cicd-flask-app-container malateshgp/cicd-flask-app:latest
 
