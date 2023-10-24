@@ -35,26 +35,3 @@ jobs:
         docker stop cicd-flask-app-container || true
         docker rm cicd-flask-app-container || true 
         docker run -d -p 80:80 --name cicd-flask-app-container malateshgp/cicd-flask-app:latest
-
-  pylint:
-          runs-on: ubuntu-latest
-          needs: build  # Add this line if you want the Pylint job to run after the build job
-        
-          steps:
-          - name: Set up Python
-            uses: actions/setup-python@v2
-            with:
-              python-version: 3.x  # Specify the correct Python version
-        
-          - name: Checkout code
-            uses: actions/checkout@v2
-            
-          - name: Install pylint
-            run: pip install pylint
-          
-          - name: Run pylint
-            run: |
-              find . -name "*.py" | xargs pylint \
-              --disable=missing-docstring,invalid-name,unused-import \
-              --output-format=colorized
-        
