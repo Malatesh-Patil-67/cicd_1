@@ -14,3 +14,6 @@ def client():
 def test_home_page(client):
     response = client.get('/')
     assert b'Welcome to My Flask App' in response.data
+
+def test_example():
+    assert 1 == 1
