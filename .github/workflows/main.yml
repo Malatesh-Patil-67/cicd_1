@@ -36,3 +36,18 @@ jobs:
         docker rm cicd-flask-app-container || true 
         docker run -d -p 80:80 --name cicd-flask-app-container malateshgp/cicd-flask-app:latest
 
+  pylint:
+      runs-on: ubuntu-latest
+      
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Install pylint
+        run: pip install pylint
+      
+      - name: Run pylint
+        run: |
+          find . -name "*.py" | xargs pylint \
+          --disable=missing-docstring,invalid-name,unused-import \
+          --output-format=colorized
