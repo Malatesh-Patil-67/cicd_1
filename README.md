@@ -50,7 +50,7 @@ Step-by-step instructions to get your project running locally:
 1. Clone the repository:
 
    
-   git clone https://github.com/yourusername/cicd-flask-app.git
+   git clone https://github.com/Malatesh-Patil-67/cicd-flask-app.git
    cd cicd-flask-app
 
 
