@@ -17,7 +17,7 @@ jobs:
       run: docker build -t cicd-flask-app .  
     
     - name: Lint with pylint
-      run: docker run cicd-flask-app pylint app.py.py
+      run: docker run cicd-flask-app pylint app.py
      
 
     
