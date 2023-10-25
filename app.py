@@ -1,3 +1,4 @@
+"""just simple web application"""
 from flask import Flask
 
 app = Flask(__name__)
@@ -6,9 +7,7 @@ app = Flask(__name__)
 def index():
     """
     This function handles the root route.
-
     It returns a 'Hello, World!' message when the root route is accessed.
-
     Returns:
         str: A greeting message.
     """
