@@ -15,6 +15,8 @@ COPY . /app
 RUN pip install Flask
 # Install testing dependencies
 RUN pip install pytest
+
+RUN pip install pylint
 # Add other dependencies if needed
 
 
