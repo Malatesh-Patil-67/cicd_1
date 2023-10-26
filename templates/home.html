@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data Visualization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stock Data Visualization</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="stock_symbol">Enter Stock Symbol:</label>
+                <input type="text" class="form-control" name="stock_symbol" id="stock_symbol" placeholder="e.g., AAPL">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+        {% if stock_symbol %}
+        <hr>
+        <h2>Stock Symbol: {{ stock_symbol }}</h2>
+        <img src="data:image/png;base64, {{ plot_url }}" alt="Stock Data Plot">
+        {% endif %}
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
